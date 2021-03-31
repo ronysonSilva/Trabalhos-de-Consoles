@@ -1,1 +1,0 @@
-Aqui a gente modifica tudo o que podemos com o simples objetivo de criar conflitos entre o branch conflito mortal e o branch novo, para depois criar conflito entre o branch novo e o main.
