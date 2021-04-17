@@ -26,11 +26,21 @@ public class Main {
 	
 	     Grilo []g = new Grilo[Qgrilos];
 	    
-	    for(int i = 1; i<Qgrilos; i++) {
+	    for(int i = 1; i<Qgrilos; i++) { //decide de qual time pertence cada grilo pertence
 	    	
 	    	g[i] = new Grilo (i);
 	    	g[i].start();
-	    
+	      
+			
+		if(i % 2 != 0) {
+			gA[i] = new Grilo (i, 1);
+		}else if(count % 2 == 0) {
+			gA[i] = new Grilo (i, 2);
+		}
+			
+		 gA[i].start();//inicia os grilos
+		 
+		}
 		
 	
 	
