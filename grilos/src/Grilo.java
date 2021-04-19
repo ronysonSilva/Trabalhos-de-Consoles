@@ -1,16 +1,22 @@
 public class Grilo extends Thread {
 		 
-		int pulos;
-		int distAtual;
-		int lugar = 0;
-		int id;
-		int lap;
+		private int pulos, distAtual, id, time, local;
+		
+		int finalg, iniciog;
 		
 		public Grilo (int id) {
 			this.id = id;
+			this.time = time;
 			
 			
 		}
+		public void atualiza(int z) {
+	      	  synchronized (this) {
+	     	   	
+	        	int rand = finalg - z;
+	        	this.local = rand;
+	        }
+	    }
 		
 		
 		public void run() {
@@ -27,7 +33,7 @@ public class Grilo extends Thread {
 				
 				//Colocamos um if antes do try/catch para evitar um "pulo adicional" ates de dizer que chegou
 				if(distAtual >= Main.disMax) {
-					   System.out.println("O Grilo "+id+" alcançou a linha de chegada com " + pulos + " pulos.");
+					   System.out.println("O Grilo "+id+" alcanÃ§ou a linha de chegada com " + pulos + " pulos.");
 				   }
 				
 				
@@ -44,9 +50,9 @@ public class Grilo extends Thread {
 			
 				Main.posicao++;
 				
-				//Aqui era onde ficava o codigo anteriormente que fazia o grilo ter que dar mais um pulo após chegar
+				//Aqui era onde ficava o codigo anteriormente que fazia o grilo ter que dar mais um pulo apÃ³s chegar
 				
-				//System.out.println("O Grilo "+id+" alcançou a linha de chegada com " + pulos + " pulos.");  
+				//System.out.println("O Grilo "+id+" alcanÃ§ou a linha de chegada com " + pulos + " pulos.");  
 				
 				
 				
