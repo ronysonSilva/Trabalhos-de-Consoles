@@ -4,6 +4,7 @@ public class Main {
 	
 	static int posicao, gg, totalpulos1, totalpulos2, totaldist1, totaldist2, timeW = 0;
 	static int disMax; 
+	 static int z = 1;
 	
 	
 	
@@ -26,21 +27,14 @@ public class Main {
 	
 	     Grilo []g = new Grilo[Qgrilos];
 	    
-	    for(int i = 1; i<Qgrilos; i++) { //decide de qual time pertence cada grilo pertence
-	    	
-	    	g[i] = new Grilo (i);
-	    	g[i].start();
-	      
-			
-		if(i % 2 != 0) {
-			gA[i] = new Grilo (i, 1);
-		}else if(count % 2 == 0) {
-			gA[i] = new Grilo (i, 2);
-		}
-			
-		 gA[i].start();//inicia os grilos
-		 
-		}
+	     for(int i = 1; i<Qgrilos; i++) { //decide de qual time pertence cada grilo pertence
+		    	
+		    	if (z*3<=i) z++;
+		 	  
+		 	   g[i] = new Grilo (i, z);
+		 		 g[i].start();//inicia os grilos
+		 		 
+		 		}
 		
 	
 	
