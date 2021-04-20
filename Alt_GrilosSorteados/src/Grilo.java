@@ -3,7 +3,6 @@ import java.util.Random;
 public class Grilo extends Thread {
  
 	private int pulos, distAtual, id, time, total;
-	int finalg, iniciog;
 	
 	public Grilo (int id, int time) {
 		this.id = id;
@@ -32,7 +31,7 @@ public class Grilo extends Thread {
 				Main.winTime = time;
 			}
 
-			for(int i = 1 ; i < Main.totaltimes ; i++) {
+			for(int i = 0 ; i < Main.totaltimes ; i++) {
 				if(i == this.time) {
 					Main.distTotal[i] = distAtual;
 				}
@@ -40,7 +39,8 @@ public class Grilo extends Thread {
 			
 
 			
-			System.out.println("O Grilo "+id+ " do time "+time+" alcançou a linha de chegada com "+ pulos + " pulos.");
+			System.out.println("O Grilo "+id+ " do time "+time+" alcançou a linha de chegada com "+ 
+			pulos + " pulos.");
 			
 			System.out.println("Ele chegou em " +(Main.chegada - 1)+ "º lugar!");
 			System.out.println(" ");
@@ -65,8 +65,8 @@ public class Grilo extends Thread {
 				
 				Main.finalizou = true;
 				
-				for(int i = 1 ; i < Main.totaltimes ; i++) {
-					System.out.println("O time "+ i +" alcançou a distância total de "+ Main.distTotal[i]);
+				for(int i = 0 ; i < Main.totaltimes ; i++) {
+					System.out.println("O time "+ (i+1) +" alcançou a distância total de "+ Main.distTotal[i]);
 				}
 				
 				

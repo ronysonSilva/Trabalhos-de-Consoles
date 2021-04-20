@@ -4,7 +4,7 @@ public class Main {
 	
 	static int distMax;
 	static int grilototal, winTime, winGrilo, chegada, totaltimes;
-	static int time = 1;
+	static int time = 0;
 	static int distTotal[];
 	static boolean finalizou = false;
 	
@@ -13,9 +13,9 @@ public class Main {
 		
 		Random gerador = new Random();
 		
-		grilototal = gerador.nextInt(30)+1;
+		grilototal = gerador.nextInt(25)+6;
 		
-		distMax = gerador.nextInt(300);
+		distMax = gerador.nextInt(251)+50;
 		
 		System.out.println("A distância máxima é " + distMax);//Avisa a distância máxima
 		
