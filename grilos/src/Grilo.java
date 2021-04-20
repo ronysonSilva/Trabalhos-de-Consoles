@@ -33,7 +33,22 @@ public class Grilo extends Thread {
 				
 				//Colocamos um if antes do try/catch para evitar um "pulo adicional" ates de dizer que chegou
 				if(distAtual >= Main.disMax) {
+					if(Main.posicao == 1) Main.timeW = this.time;
 					   System.out.println("O Grilo "+id+" alcançou a linha de chegada com " + pulos + " pulos.");
+					   
+					   Main.posicao++;
+						  
+					   atualiza(Main.posicao);
+					   
+					   if(this.time == 1) {
+						   
+						   Main.totalpulos1 += pulos;
+						   Main.totaldist1 += distAtual;
+					   }
+					   else {
+						   Main.totalpulos2 += pulos;
+						   Main.totaldist2 += distAtual;
+					   }
 				   }
 				
 				
@@ -44,7 +59,11 @@ public class Grilo extends Thread {
 					e.printStackTrace();
 				}
 				  
-			   
+			   if (local == 1) {
+					
+					System.out.println("\n" + "\n" + "Time 1: Total de pulos: " + Main.totalpulos1 + " - Distancia percorrida: " + Main.totaldist1);
+					System.out.println("\n" + "Time 2: Total de pulos: " + Main.totalpulos2 + " - Distancia percorrida: " + Main.totaldist2);
+					System.out.println("\n" + "Time "+Main.timeW+" foi o vencedor");
 				
 				}
 			
